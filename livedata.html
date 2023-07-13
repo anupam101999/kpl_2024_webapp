@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="transparent_logo.ico" type="image/x-icon">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylelive.css" />
+  <title>Home Page</title>
+</head>
+
+<script src="livedata.js"></script>
+    
+
+<body>
+    <header>
+      <h1>Kashipur Premier League - 5 organized by Jonaki Sangha</h1>
+    </header>
+
+
+  <div class="flex-container">
+    <div class="right-section">
+      <p style="font-size: 200%;padding-left: 5%;"><u>Sold Player List</u></p>
+      <ul id="api-data"></ul>
+    </div>
+    <div>
+      <p style="font-size: 200%;padding-left: 5%;"><u>Team Related Information</u></p>
+      
+
+
+
+
+
+
+
+      <div id="table-container"></div>
+
+      <script>
+        function fetchData() {
+          // Retrieve JSON data from the API
+          fetch('https://kpl2023.online/kpl/registration/api/liveTeamData')
+            .then(response => response.json())
+            .then(data => {
+              // Create the table dynamically
+              const table = document.createElement('table');
+              const thead = document.createElement('thead');
+              const tbody = document.createElement('tbody');
+    
+              // Create table header row
+              const headerRow = document.createElement('tr');
+              for (let key in data[0]) {
+                const th = document.createElement('th');
+                th.textContent = key;
+                headerRow.appendChild(th);
+              }
+              thead.appendChild(headerRow);
+              table.appendChild(thead);
+    
+              // Populate the table with data
+              data.forEach(item => {
+                const row = document.createElement('tr');
+                for (let key in item) {
+                  const cell = document.createElement('td');
+                  cell.textContent = item[key];
+                  row.appendChild(cell);
+                }
+                tbody.appendChild(row);
+              });
+    
+              table.appendChild(tbody);
+    
+              // Append the table to the container
+              const container = document.getElementById('table-container');
+              container.innerHTML = ''; // Clear previous table
+              container.appendChild(table);
+    
+              // Set the timer to fetch data again after 1 minute
+              // setTimeout(fetchData, 10000); // 60000 milliseconds = 1 minute
+            })
+            .catch(error => console.log(error));
+        }
+    
+        // Initial call to start the timer
+        fetchData();
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</body>>
+
+<footer>
+  <div class="footer-content">
+    <span class="developer-name">Devloped By : Kpl Dev Team   |   Connect With US on    
+      <a href="https://www.facebook.com/kplofficial11" target="_blank">Facebook</a></h2></span>
+    
+  </div>
+  <div class="copyright">
+    &copy; Kashipur Premier League 2023. All rights reserved.
+  </div>
+</footer>
+  
+</html>

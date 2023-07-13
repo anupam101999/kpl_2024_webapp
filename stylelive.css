@@ -1,0 +1,112 @@
+header {
+  padding: 20px;
+  font-size: 24px;
+  background-color: teal;
+  color: #fff;
+  text-align: center;
+}
+
+
+/* Footer styles */
+footer {
+  background-color: teal;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.developer-name {
+  margin-right: 10px;
+}
+
+.developer-name,
+a img {
+  height: 25px;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .developer-name {
+    margin-bottom: 15%;
+  }
+
+  .developer-name,
+  a img {
+    height: 20px;
+  }
+}
+
+
+.container {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.right-section {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-container>div {
+  /* background-color: #a8e024;
+    margin: 10px;
+    padding: 20px; */
+  font-size: 30px;
+  cursor: pointer;
+  /* border-radius: 30px; */
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+/* CSS styles for the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+
+.footer a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  color: #007bff;
+}
+.content {
+  flex: 1;
+}
