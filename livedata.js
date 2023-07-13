@@ -1,5 +1,5 @@
 function fetchData() {
-    fetch('https://kpl2023.online/kpl/registration/api/soldPlayerList')
+    fetch('https://kpl2023.online/registration/kpl/registration/api/soldPlayerList')
       .then(response => response.json())
       .then(data => {
         // Process the received data and update the UI
