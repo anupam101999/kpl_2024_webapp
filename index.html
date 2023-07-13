@@ -1,13 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" href="transparent_logo.ico" type="image/x-icon">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
 </head>
+<!-- <script src="script.js"></script> -->
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+    
+
 <body>
-    <h1>Home page for kpl 2023</h1>
-    <h1>Test again</h1>
-    <a href="https://kpl2023.online/registration/loginHomePage">my link</a>
+  <nav class="navbar">
+
+    <!-- Title -->
+    <div class="logo"><h3>Kashipur Premier League - 5 organized by Jonaki Sangha</h3></div>
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+
+      <!-- USING CHECKBOX HACK -->
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+
+        <li><a href="/">Registration</a></li>
+        <li><a href="/">Payment Validation</a></li>
+
+        <li class="TeamList">
+          <p>Team List</p>
+
+          <!-- Team MENU -->
+          <ul class="dropdown">
+            <li><a href="/">Team 1 </a></li>
+            <li><a href="/">Team 2</a></li>
+            <li><a href="/">Team 3</a></li>
+            <li><a href="/">Team 4</a></li>
+            <li><a href="/">Team 5</a></li>
+            <li><a href="/">Team 6 </a></li>
+            <li><a href="/">Team 7</a></li>
+            <li><a href="/">Team 8</a></li>
+            <li><a href="/">Team 9</a></li>
+            <li><a href="/">Team 10</a></li>
+            <li><a href="/">Team 11</a></li>
+            <li><a href="/">Team 12</a></li>
+          </ul>
+
+        </li>
+
+        <li><a href="/">Admin LogIn</a></li>
+        <!-- <li><a href="/">Contact</a></li> -->
+      </div>
+    </ul>
+  </nav>
+
+  </div>
 </body>
+
+
+<footer>
+    <div class="footer-content">
+      <span class="developer-name">Devloped By : Kpl Dev Team   |   Connect With US on    
+        <a href="https://www.facebook.com/your-facebook-page" target="_blank">
+          <img src="fb.png" alt="Facebook Logo">
+        </a></span>
+      
+    </div>
+    <div class="copyright">
+      &copy; Kashipur Premier League 2023. All rights reserved.
+    </div>
+  </footer>
+  
 </html>
