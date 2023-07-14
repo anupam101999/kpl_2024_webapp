@@ -201,7 +201,7 @@ footer {
     cursor: pointer;
     border-radius: 30px;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     .flex-container {
       flex-direction: column;
     }
