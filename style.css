@@ -267,4 +267,24 @@ footer {
     100% { left: -400%; } /* Adjust the percentage based on the number of images */
   }
   
+  /* Media query for laptops with a screen width of 1068px */
+  @media screen and (max-width: 1068px) {
+    #slider figure img {
+      width: 80%; /* Set image width to 80% for laptops */
+    }
+  }
+  
+  /* Media query for laptops with a screen width of 768px */
+  @media screen and (max-width: 768px) {
+    #slider figure img {
+      width: 70%; /* Set image width to 70% for laptops */
+    }
+  }
+  
+  /* Media query for phones with a screen width of 400px */
+  @media screen and (max-width: 400px) {
+    #slider figure img {
+      width: 100%; /* Set image width to 100% for phones */
+    }
+  }
   
