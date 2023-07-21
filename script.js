@@ -1,14 +1,29 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     const images = document.querySelectorAll("#slider img");
-//     let index = 0;
-  
-//     function showImage() {
-//       images.forEach(image => image.style.display = "none");
-//       images[index].style.display = "block";
-//       index = (index + 1) % images.length;
-//       setTimeout(showImage, 5000); // Change image every 5 seconds
-//     }
-  
-//     showImage();
-//   });
-  
+// JavaScript code from script.js
+const slidesContainer = document.querySelector(".slides");
+const slides = slidesContainer.children;
+let slideIndex = 0;
+
+function showSlide(n) {
+    slideIndex = n;
+    slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+}
+
+// Call the nextSlide function every 2 seconds (adjust this value as you like)
+setInterval(nextSlide, 2000);
+
+// Ensure the last image doesn't leave a blank page
+slidesContainer.addEventListener("transitionend", () => {
+    if (slideIndex === slides.length - 1) {
+        slidesContainer.style.transition = "none";
+        slideIndex = 0;
+        showSlide(slideIndex);
+        setTimeout(() => {
+            slidesContainer.style.transition = "transform 0.5s ease";
+        }, 0);
+    }
+});

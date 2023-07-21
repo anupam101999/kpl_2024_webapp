@@ -234,4 +234,43 @@ footer {
 
 
 
- 
+  .container {
+    max-width: 100%; /* Ensure the container takes the full width of the viewport */
+    overflow: hidden;
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Horizontally center the image on all screens */
+  }
+  
+  .responsive-image {
+    width: 100%; /* Image will fit the screen on small screens */
+    height: auto; /* Maintain the aspect ratio */
+  }
+  
+  /* Media query for relatively bigger screens like 14-inch screens */
+  @media screen and (min-width: 10in) {
+    .responsive-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;/* Set image width to 50% for relatively bigger screens */
+    }
+  }
+
+
+
+
+  .slideshow {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slides img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
