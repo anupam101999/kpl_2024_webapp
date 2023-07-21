@@ -39,7 +39,7 @@
   .menu {
     display: flex;
     gap: 1em;
-    font-size: 18px;
+    /* font-size: 18px; */
   }
   
   .menu li:hover {
@@ -140,6 +140,16 @@ input[type=checkbox] {
     }
   }
 
+
+
+
+
+
+
+
+
+
+  
   /* Footer styles */
 footer {
     background-color: teal;
@@ -223,9 +233,13 @@ footer {
     justify-content: center;
     height: 20vh; /* 20% of viewport height */
     width: 100vw; /* 100% of viewport width */
-    background-color: lightblue;
+    background-color:lightblue;
     color: #e91912;
     font-size: 130%;
+  }
+
+  body{
+    background-color:rgb(241 240 238)
   }
 
   
