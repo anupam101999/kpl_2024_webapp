@@ -7,9 +7,6 @@
     box-sizing: border-box;
   }
   
-  /* body {
-    font-family: "Lucida Console", "Courier New", monospace;
-  } */
   
   a {
     text-decoration: none;
@@ -231,29 +228,43 @@ footer {
     font-size: 130%;
   }
 
+  
 
+
+
+
+
+  body {
+    margin: 0;
+    overflow: hidden; /* Prevent vertical scrollbar */
+  }
+  
+  #slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%; /* Ensure the slider fits the viewport width */
+  }
+  
+  #slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    font-size: 0;
+    animation: 30s slidy infinite;
+  }
+  
+  #slider figure img {
+    width: 100%; /* Set image width to 100% to make it responsive */
+    height: auto; /* Allow the height to adjust according to the aspect ratio */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  }
+  
   @keyframes slidy {
     0% { left: 0%; }
-    20% { left: 0%; }
-    25% { left: -100%; }
-    45% { left: -100%; }
-    50% { left: -200%; }
-    70% { left: -200%; }
-    75% { left: -300%; }
-    95% { left: -300%; }
-    100% { left: -400%; }
-    }
-    
-    body { margin: 0; } 
-    div#slider { overflow: hidden; }
-    div#slider figure img { width: 20%; float: left; }
-    div#slider figure { 
-      position: relative;
-      width: 500%;
-      margin: 0;
-      left: 0;
-      text-align: left;
-      font-size: 0;
-      animation: 30s slidy infinite; 
-    }
-    
+    100% { left: -400%; } /* Adjust the percentage based on the number of images */
+  }
+  
+  
