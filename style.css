@@ -268,16 +268,16 @@ footer {
   }
   
   /* Media query for laptops with a screen width of 1068px */
-  @media screen and (max-width: 1068px) {
+  @media screen and (min-width: 769px) and (max-width: 1068px) {
     #slider figure img {
-      width: 80%; /* Set image width to 80% for laptops */
+      width: 70%; /* Set image width to 70% for laptops */
     }
   }
   
   /* Media query for laptops with a screen width of 768px */
   @media screen and (max-width: 768px) {
     #slider figure img {
-      width: 70%; /* Set image width to 70% for laptops */
+      width: 60%; /* Set image width to 60% for laptops */
     }
   }
   
