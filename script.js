@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let manualImageCount;
 
-        if (inches < 10) { // image count
-            manualImageCount = 15;
+        if (inches < 10) { // image count-1
+            manualImageCount = 13;
         } else { // image count/2-1
-            manualImageCount = 7;
+            manualImageCount = 6;
         }
 
         if (slideIndex === manualImageCount) {
