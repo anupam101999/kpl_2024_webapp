@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let manualImageCount;
 
         if (inches < 10) { // For small screens (up to 4 inches wide)
-            manualImageCount = 11;
+            manualImageCount = 15;
         } else { // For large screens (more than 7 inches wide)
-            manualImageCount = 5;
+            manualImageCount = 7;
         }
 
         if (slideIndex === manualImageCount) {
