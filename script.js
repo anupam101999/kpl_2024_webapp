@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 slideIndex = 0;
                 showSlide(slideIndex);
-            }, 2000);
+            }, 3000);
         }
     }
 
     // Call the nextSlide function every 2 seconds (adjust this value as you like)
-    setInterval(nextSlide, 2000);
+    setInterval(nextSlide, 3000);
 });
