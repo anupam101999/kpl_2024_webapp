@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let manualImageCount;
 
-        if (inches < 10) { // For small screens (up to 4 inches wide)
+        if (inches < 10) { // image count
             manualImageCount = 15;
-        } else { // For large screens (more than 7 inches wide)
+        } else { // image count/2-1
             manualImageCount = 7;
         }
 
