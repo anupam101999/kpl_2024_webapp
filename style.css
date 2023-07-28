@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Calibri", sans-serif;
   }
   
   
@@ -206,7 +207,7 @@ footer {
     background-color:rgb(249 3 131);
     margin: 10px;
     padding: 20px;
-    font-size: 30px;
+    font-size: 19px;
     cursor: pointer;
     border-radius: 30px;
   }
