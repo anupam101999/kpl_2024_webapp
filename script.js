@@ -38,3 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Call the nextSlide function every 2 seconds (adjust this value as you like)
     setInterval(nextSlide, 3000);
 });
+
+
+
+
+
+function redirectToURL(url) {
+    window.open(url, '_blank');
+  }

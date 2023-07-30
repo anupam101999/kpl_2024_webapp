@@ -205,6 +205,7 @@ footer {
   
   .flex-container > div {
     background-color:rgb(249 3 131);
+    color: whitesmoke;
     margin: 10px;
     padding: 20px;
     font-size: 19px;
