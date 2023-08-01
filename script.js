@@ -68,6 +68,7 @@ function redirectToURL(url) {
     // const indianTimeOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours offset for Indian time zone (IST)
 
     const timeDifference = refDate - today;
+    console.log(timeDifference);
     if (timeDifference > 0) {
         const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
         // const reversedDate = new Date(today - (daysLeft - 1) * 24 * 60 * 60 * 1000 + indianTimeOffset);
@@ -80,6 +81,7 @@ function redirectToURL(url) {
         // }
         // );
 
+        console.log(daysLeft);
         document.getElementById('countdown').textContent = `Hurry Up! ${daysLeft} days left until "Owner" registration closes! Avoid Last-minute Rush, get your team registration done with in 5th August,2023(Saturday).`;
     } else {
         document.getElementById('countdown').textContent = "Owner Registration deadline has passed.";
