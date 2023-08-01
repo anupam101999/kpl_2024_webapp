@@ -80,3 +80,39 @@ function redirectToURL(url) {
 
 // Call the function to perform the reverse date calculation
 calculateReverseDate();
+
+
+
+
+
+
+
+
+
+
+   // Function to get the local IP address using WebRTC
+   function getLocalIP() {
+    const pc = new RTCPeerConnection();
+    pc.createDataChannel("");
+    return new Promise((resolve) => {
+      pc.createOffer()
+        .then(sdp => {
+          const regex = /\b(?:\d{1,3}\.){3}\d{1,3}\b/g;
+          const localIP = sdp.sdp.match(regex)[0];
+          resolve(localIP);
+        })
+        .catch(error => {
+          console.error('Error getting local IP:', error);
+          resolve('Error getting local IP');
+        })
+        .finally(() => pc.close());
+    });
+  }
+
+  // Call the function to get the local IP when the page loads
+  window.addEventListener('DOMContentLoaded', () => {
+    getLocalIP().then(localIP => {
+      const localIPElement = document.getElementById('localIP');
+      localIPElement.textContent = localIP;
+    });
+  });
