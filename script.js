@@ -46,3 +46,44 @@ document.addEventListener("DOMContentLoaded", function () {
 function redirectToURL(url) {
     window.open(url, '_blank');
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function calculateReverseDate() {
+    const refDate = new Date('2023-08-05'); // Reference date, change to your desired date in yyyy-mm-dd format
+    const today = new Date();
+    const indianTimeOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours offset for Indian time zone (IST)
+
+    const timeDifference = refDate - today;
+    if (timeDifference > 0) {
+        const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+        const reversedDate = new Date(today - (daysLeft - 1) * 24 * 60 * 60 * 1000 + indianTimeOffset);
+        // const formattedDate = reversedDate.toLocaleDateString('en-IN', {
+        //     timeZone: 'Asia/Kolkata',
+        //     weekday: 'long',
+        //     year: 'numeric',
+        //     month: 'long',
+        //     day: 'numeric'
+        // }
+        // );
+
+        document.getElementById('countdown').textContent = `Hurry Up! ${daysLeft} days left until "Owner" registration closes! Avoid Last-minute Rush, get your team registration done with in 5th August,2023(Saturday).`;
+    } else {
+        document.getElementById('countdown').textContent = "Owner Registration deadline has passed.";
+    }
+}
+
+// Call the function to perform the reverse date calculation
+calculateReverseDate();
