@@ -62,28 +62,18 @@ function redirectToURL(url) {
 
 
   function calculateReverseDate() {
-    const refDate = new Date('2023-08-05'); // Reference date, change to your desired date in yyyy-mm-dd format
-    const today = new Date();
+    const refDate = '5'; // Reference date, change to your desired date in yyyy-mm-dd format
+    const today = new Date().getDate();
     console.log(today);
-    // const indianTimeOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours offset for Indian time zone (IST)
-
     const timeDifference = refDate - today;
-    console.log(timeDifference/(1000 * 60 * 60 * 24));
-    if (timeDifference > 0) {
-        const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-        // const reversedDate = new Date(today - (daysLeft - 1) * 24 * 60 * 60 * 1000 + indianTimeOffset);
-        // const formattedDate = reversedDate.toLocaleDateString('en-IN', {
-        //     timeZone: 'Asia/Kolkata',
-        //     weekday: 'long',
-        //     year: 'numeric',
-        //     month: 'long',
-        //     day: 'numeric'
-        // }
-        // );
-
-        console.log(daysLeft);
-        document.getElementById('countdown').textContent = `Hurry Up! ${daysLeft} days left until "Owner" registration closes! Avoid Last-minute Rush, get your team registration done with in 5th August,2023(Saturday).`;
-    } else {
+    if (timeDifference > 0) {     
+        console.log(timeDifference);
+        document.getElementById('countdown').textContent = `Hurry Up! ${timeDifference} days left until "Owner" registration closes! Avoid Last-minute Rush, get your team registration done with in 5th August,2023(Saturday).`;
+    } 
+    else if(timeDifference==0){
+        document.getElementById('countdown').textContent = `Hurry Up! Today "Owner" registration will be closed!`;
+    }
+    else {
         document.getElementById('countdown').textContent = "Owner Registration deadline has passed.";
     }
 }
