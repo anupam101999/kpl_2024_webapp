@@ -68,7 +68,7 @@ function redirectToURL(url) {
     // const indianTimeOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours offset for Indian time zone (IST)
 
     const timeDifference = refDate - today;
-    console.log(timeDifference);
+    console.log(timeDifference/(1000 * 60 * 60 * 24));
     if (timeDifference > 0) {
         const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
         // const reversedDate = new Date(today - (daysLeft - 1) * 24 * 60 * 60 * 1000 + indianTimeOffset);
