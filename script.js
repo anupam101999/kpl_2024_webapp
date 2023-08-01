@@ -89,3 +89,21 @@ calculateReverseDate();
 
 
 
+//    Function to get the public IP address using ipinfo.io
+   function getPublicIP() {
+    return fetch('https://ipinfo.io/json')
+      .then(response => response.json())
+      .then(data => data.ip)
+      .catch(error => {
+        console.error('Error getting public IP:', error);
+        return 'Error getting public IP';
+      });
+  }
+
+  // Call the function to get the public IP when the page loads
+  window.addEventListener('DOMContentLoaded', () => {
+    getPublicIP().then(publicIP => {
+      const publicIPElement = document.getElementById('publicIP');
+      publicIPElement.textContent = publicIP;
+    });
+  });
