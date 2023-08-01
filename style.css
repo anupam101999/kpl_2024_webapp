@@ -238,7 +238,12 @@ footer {
     color: #e91912;
     font-size: 130%;
   }
-
+  @media screen and (max-width: 480px) {
+    .box {
+      height: 25vh; 
+        font-size: 16px;
+    }
+}
   body{
     background-color:rgb(241 240 238)
   }
