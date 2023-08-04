@@ -71,7 +71,7 @@ function redirectToURL(url) {
         document.getElementById('countdown').textContent = `Hurry Up! ${timeDifference} days left until "Owner" registration closes! Avoid Last-minute Rush, get your team registration done with in 5th August,2023(Saturday).`;
     } 
     else if(timeDifference==0){
-        document.getElementById('countdown').textContent = `Hurry Up! Today "Owner" registration will be closed!`;
+        document.getElementById('countdown').textContent = `Hurry Up! "Owner" registration will be closed Today!`;
     }
     else {
         document.getElementById('countdown').textContent = "Owner Registration deadline has passed.";
