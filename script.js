@@ -74,7 +74,7 @@ function redirectToURL(url) {
         document.getElementById('countdown').textContent = `Hurry Up! "Owner" registration will be closed Today!`;
     }
     else {
-        document.getElementById('countdown').textContent = "Team Owner List is now available.";
+        document.getElementById('countdown').textContent = "Team Owner List is  available now.";
     }
 }
 
