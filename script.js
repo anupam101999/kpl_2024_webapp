@@ -62,19 +62,19 @@ function redirectToURL(url) {
 
 
   function calculateReverseDate() {
-    const refDate = '5'; // Reference date, change to your desired date in yyyy-mm-dd format
+    const refDate = '20'; // Reference date, change to your desired date in yyyy-mm-dd format
     const today = new Date().getDate();
     console.log(today);
     const timeDifference = refDate - today;
     if (timeDifference > 0) {     
         console.log(timeDifference);
-        document.getElementById('countdown').textContent = `Hurry Up! ${timeDifference} days left until "Owner" registration closes! Avoid Last-minute Rush, get your team registration done with in 5th August,2023(Saturday).`;
+        document.getElementById('countdown').textContent = `Hurry Up! ${timeDifference} days left until "Player" registration closes! Avoid Last-minute Rush, get your team registration done with in 5th August,2023(Saturday).`;
     } 
     else if(timeDifference==0){
-        document.getElementById('countdown').textContent = `Hurry Up! "Owner" registration will be closed Today!`;
+        document.getElementById('countdown').textContent = `Hurry Up! "Player" registration will be closed Today!`;
     }
     else {
-        document.getElementById('countdown').textContent = "Team Owner List is available now.";
+        document.getElementById('countdown').textContent = "Sorry, We can't accept new Registrations.";
     }
 }
 
