@@ -68,7 +68,7 @@ function redirectToURL(url) {
     const timeDifference = refDate - today;
     if (timeDifference > 0) {     
         console.log(timeDifference);
-        document.getElementById('countdown').textContent = `Hurry Up! ${timeDifference} days left until "Player" registration closes! Avoid Last-minute Rush, get your registration done with in 20th August,2023(Saturday).`;
+        document.getElementById('countdown').textContent = `Hurry Up! ${timeDifference} days left until "Player" registration closes! Avoid Last-minute Rush, get your registration done with in 20th August,2023(Sunday).`;
     } 
     else if(timeDifference==0){
         document.getElementById('countdown').textContent = `Hurry Up! "Player" registration will be closed Today!`;
