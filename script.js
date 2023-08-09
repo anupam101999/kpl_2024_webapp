@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function redirectToURL(url) {
+    fetch(url);
     window.open(url, '_blank');
   }
 

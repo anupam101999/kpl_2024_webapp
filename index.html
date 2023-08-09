@@ -83,7 +83,7 @@
             <li><a href="/">Team 10</a></li>
             <li><a href="/">Team 11</a></li>
             <li><a href="/">Team 12</a></li> -->
-          <li><a href="teamList.pdf" target="_blank">Owner Informations</a></li>
+          <li><a href="teamList.pdf" target="_blank" onclick="fetch('https://kpl2023.online/registration/kpl/registration/api/eventCount?id=2')">Owner Informations</a></li>
           <li><a href="https://kpl2023.online/registration/loginHomePage" target="_blank">Player Registration</a>
           </li>
           <li><a href="https://kpl2023.online/registration/payment" target="_blank">Payment</a></li>
@@ -167,7 +167,7 @@
     <div class="flex-container">
       <!-- <div><a href="https://kpl2023.online/registration/liveAution" target="_blank" style="color: whitesmoke;">Live Auction Data</a></div>
       <div style="color: whitesmoke;">Registered Player List</div> -->
-      <div onclick="redirectToURL('teamList.pdf')"><button
+      <div onclick="redirectToURL('teamList.pdf'),fetch('https://kpl2023.online/registration/kpl/registration/api/eventCount?id=2')"><button
           style="background: none; border: none; color: whitesmoke; cursor: pointer;"></button>
         Owner Informations
       </div>
@@ -175,7 +175,7 @@
           style="background: none; border: none; color: whitesmoke; cursor: pointer;"></button>Player Registation</div>
       <div onclick="redirectToURL('https://kpl2023.online/registration/payment')"><button
           style="background: none; border: none; color: whitesmoke; cursor: pointer;"></button> Payment</div>
-      <div onclick="redirectToURL('rules.pdf')"><button
+      <div onclick="redirectToURL('rules.pdf'),fetch('https://kpl2023.online/registration/kpl/registration/api/eventCount?id=1')"><button
           style="background: none; border: none; color: whitesmoke; cursor: pointer;"></button>Rules & Regulation
       </div>
     </div>
