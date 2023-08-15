@@ -70,7 +70,7 @@ function redirectToURL(url) {
     if (timeDifference > 0) {     
         console.log(timeDifference);
         document.getElementById('countdown').textContent =
-        "Updated icon and owner information pdf is available now";
+        "Happy 77th Independence Day KPLIANS!";
         //  `Hurry Up! ${timeDifference} days left until "Player" registration closes! Avoid Last-minute Rush, get your registration done with in 20th August,2023(Sunday).`;
     } 
     else if(timeDifference==0){
