@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function redirectToURL(url) {
     fetch(url);
     window.open(url, '_blank');
-  }
+}
 
 
 
@@ -62,28 +62,36 @@ function redirectToURL(url) {
 
 
 
-  function calculateReverseDate() {
+function calculateReverseDate() {
     const refDate = '2023-08-20'; // Change this to your desired date in yyyy-mm-dd format
     const targetDate = new Date(refDate);
     const currentDate = new Date();
-    
+
     // Calculate the time difference in milliseconds
     const timeDifference = targetDate - currentDate;
-    
+
+    // Subtract 5 hours and 30 minutes (5 * 60 * 60 * 1000 + 30 * 60 * 1000) from the time difference
+    const modifiedTimeDifference = timeDifference - (5 * 60 * 60 * 1000 + 30 * 60 * 1000);
+
+    // Convert the modified time difference back to a Date object
+    const modifiedDate = new Date(currentDate.getTime() + modifiedTimeDifference);
+
+    console.log('Modified Date:', modifiedDate);
+
     // Calculate days, hours, minutes, and seconds
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-    
+    const days = Math.floor(modifiedTimeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((modifiedTimeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((modifiedTimeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((modifiedTimeDifference % (1000 * 60)) / 1000);
+
     console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until ${refDate}`);
-    
+
     const countdownElement = document.getElementById('countdown');
-    if (timeDifference > 0) {
+    if (modifiedTimeDifference > 0) {
         countdownElement.textContent =
-          `Hurry Up! ${days} days, ${hours - 5} hours, ${minutes - 30} minutes, ${seconds} seconds left until "Player" registration closes! Avoid Last-minute Rush, get your registration done within 20th August, 2023 (Sunday).`;
-    } 
-    else if (timeDifference == 0) {
+            `Hurry Up! ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until "Player" registration closes! Avoid Last-minute Rush, get your registration done within 20th August, 2023 (Sunday).`;
+    }
+    else if (modifiedTimeDifference == 0) {
         countdownElement.textContent = `Hurry Up! "Player" registration will be closed today!`;
     }
     else {
