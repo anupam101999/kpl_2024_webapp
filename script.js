@@ -63,27 +63,39 @@ function redirectToURL(url) {
 
 
   function calculateReverseDate() {
-    const refDate = '20'; // Reference date, change to your desired date in yyyy-mm-dd format
-    const today = new Date().getDate();
-    console.log(today);
-    const timeDifference = refDate - today;
-    if (timeDifference > 0) {     
-        console.log(timeDifference);
-        document.getElementById('countdown').textContent =
-        "Happy 77th Independence Day KPLIANS!";
-        //  `Hurry Up! ${timeDifference} days left until "Player" registration closes! Avoid Last-minute Rush, get your registration done with in 20th August,2023(Sunday).`;
+    const refDate = '2023-08-20'; // Change this to your desired date in yyyy-mm-dd format
+    const targetDate = new Date(refDate);
+    const currentDate = new Date();
+    
+    // Calculate the time difference in milliseconds
+    const timeDifference = targetDate - currentDate;
+    
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    
+    console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until ${refDate}`);
+    
+    const countdownElement = document.getElementById('countdown');
+    if (timeDifference > 0) {
+        countdownElement.textContent =
+          `Hurry Up! ${days} days, ${hours - 5} hours, ${minutes - 30} minutes, ${seconds} seconds left until "Player" registration closes! Avoid Last-minute Rush, get your registration done within 20th August, 2023 (Sunday).`;
     } 
-    else if(timeDifference==0){
-        document.getElementById('countdown').textContent = `Hurry Up! "Player" registration will be closed Today!`;
+    else if (timeDifference == 0) {
+        countdownElement.textContent = `Hurry Up! "Player" registration will be closed today!`;
     }
     else {
-        document.getElementById('countdown').textContent = "Sorry, We can't accept new Registrations.";
+        countdownElement.textContent = "Sorry, We can't accept new registrations.";
     }
 }
 
-// Call the function to perform the reverse date calculation
+// Call the function initially
 calculateReverseDate();
 
+// Update the countdown every second
+setInterval(calculateReverseDate, 1000);
 
 
 
