@@ -89,7 +89,7 @@ function calculateReverseDate() {
     const countdownElement = document.getElementById('countdown');
     if (modifiedTimeDifference > 0) {
         countdownElement.textContent =
-            `Hurry Up! ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until "Player" registration closes! Avoid Last-minute Rush, get your registration done within 20th August, 2023 (Sunday).`;
+            `Hurry Up! ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left`;
     }
     else if (modifiedTimeDifference == 0) {
         countdownElement.textContent = `Hurry Up! "Player" registration will be closed today!`;
