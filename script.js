@@ -63,7 +63,7 @@ function redirectToURL(url) {
 
 
 function calculateReverseDate() {
-    const refDate = '2023-08-21'; // Change this to your desired date in yyyy-mm-dd format
+    const refDate = '2023-08-22'; // Change this to your desired date in yyyy-mm-dd format
     const targetDate = new Date(refDate);
     const currentDate = new Date();
 
@@ -89,13 +89,10 @@ function calculateReverseDate() {
     const countdownElement = document.getElementById('countdown');
     if (modifiedTimeDifference > 0) {
         countdownElement.textContent =
-            `Hurry Up! ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left`;
-    }
-    else if (modifiedTimeDifference == 0) {
-        countdownElement.textContent = `Hurry Up! "Player" registration will be closed today!`;
+            `Player pdf will be available in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
-        countdownElement.textContent = "Sorry, We can't accept new registrations.";
+        countdownElement.textContent = "Player PDf is available now ! ";
     }
 }
 
