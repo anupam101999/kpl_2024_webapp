@@ -63,7 +63,7 @@ function redirectToURL(url) {
 
 
 function calculateReverseDate() {
-    const refDate = '2023-08-21'; // Change this to your desired date in yyyy-mm-dd format
+    const refDate = '2023-08-27'; // Change this to your desired date in yyyy-mm-dd format
     const targetDate = new Date(refDate);
     const currentDate = new Date();
 
@@ -89,10 +89,10 @@ function calculateReverseDate() {
     const countdownElement = document.getElementById('countdown');
     if (modifiedTimeDifference > 0) {
         countdownElement.textContent =
-            `Player pdf will be available in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+            `Big Grand Auction in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
-        countdownElement.textContent = "Player PDf is available now ! ";
+        countdownElement.textContent = "Battle Day ! ";
     }
 }
 
@@ -100,7 +100,7 @@ function calculateReverseDate() {
 calculateReverseDate();
 
 // Update the countdown every second
-// setInterval(calculateReverseDate, 1000);
+setInterval(calculateReverseDate, 1000);
 
 
 
