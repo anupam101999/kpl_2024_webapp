@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let manualImageCount;
 
         if (inches < 10) { // image count-1
-            manualImageCount = 13;
+            manualImageCount = 15;
         } else { // image count/2-1
-            manualImageCount = 6;
+            manualImageCount = 7;
         }
 
         if (slideIndex === manualImageCount) {
