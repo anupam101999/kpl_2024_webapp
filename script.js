@@ -92,7 +92,7 @@ function calculateReverseDate() {
             `Grand Auction in  ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
-        countdownElement.textContent = "Battle Day ! ";
+        countdownElement.textContent = "Grand Auction Day of KPL season 5 ! ";
     }
 }
 
