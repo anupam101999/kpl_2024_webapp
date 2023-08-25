@@ -89,7 +89,7 @@ function calculateReverseDate() {
     const countdownElement = document.getElementById('countdown');
     if (modifiedTimeDifference > 0) {
         countdownElement.textContent =
-            `Grand Auction in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+            `Grand Auction in  ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
         countdownElement.textContent = "Battle Day ! ";
