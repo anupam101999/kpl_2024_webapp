@@ -92,7 +92,7 @@ function calculateReverseDate() {
             `Grand Auction in  ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
-        countdownElement.textContent = "Team List i available now ! ";
+        countdownElement.textContent = "Team List is available now ! ";
     }
 }
 
