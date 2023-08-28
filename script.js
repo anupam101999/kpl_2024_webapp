@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let manualImageCount;
 
         if (inches < 10) { // image count-1
-            manualImageCount = 15;
+            manualImageCount = 13;
         } else { // image count/2-1
-            manualImageCount = 7;
+            manualImageCount = 6;
         }
 
         if (slideIndex === manualImageCount) {
@@ -97,7 +97,7 @@ function calculateReverseDate() {
 }
 
 // Call the function initially
-calculateReverseDate();
+// calculateReverseDate();
 
 // Update the countdown every second
 setInterval(calculateReverseDate, 1000);
