@@ -92,7 +92,7 @@ function calculateReverseDate() {
             `Grand Auction in  ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
-        countdownElement.textContent = "Match schedule is available now ! ";
+        countdownElement.textContent = "11 Spartans won KPL 2023 ! ";
     }
 }
 
