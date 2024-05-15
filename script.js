@@ -92,7 +92,7 @@ function calculateReverseDate() {
             `Grand Auction in  ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
-        countdownElement.textContent = "11 Spartans won KPL 2023 ! ";
+        countdownElement.textContent = "Thank you for your co operation, Adieu for now :) ";
     }
 }
 
