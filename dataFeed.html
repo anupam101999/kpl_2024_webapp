@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript">
+    // Function to disable forward navigation
+    function disableForwardButton() {
+      history.pushState(null, null, document.URL);
+      window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+      });
+    }
+  </script>
+  <link rel="icon" href="${pageContext.request.contextPath}/images/transparent_logo.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Data Feeding</title>
+
+  <style>
+    * {
+      font-family: "Calibri", sans-serif;
+    }
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #ffA500;
+    }
+    .header {
+      padding: 0.005%;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+      font-size: 20px;
+    }
+    .flex-container {
+      display: flex;
+    }
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .image {
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
+    .flex-container > div {
+      padding: 20px;
+      font-size: 20px;
+    }
+    button[type=submit] {
+      border-style: solid;
+      border-color: black black black black;
+      width: 84px;
+      height: 38px;
+      border-radius: 25px;
+    }
+    input[type=number] {
+      width: 242px;
+      height: 36px;
+      border-radius: 25px;
+      font-size: 16px;
+      border: 1px solid #ffA500;
+      text-align: center;
+    }
+    .error-popup {
+      position: fixed;
+      top: 90%;
+      left: 28%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      color: rgb(240, 8, 8);
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var delayTimer; // Variable to store the timer ID
+
+      // Listen for input change event
+      $("#searchInput").on("input", function() {
+        var searchInput = $(this).val();
+        var resultContainer = $("#resultContainer");
+
+        // Clear the previous delay timer (if any)
+        clearTimeout(delayTimer);
+
+        // Set a new delay timer for 1 second
+        delayTimer = setTimeout(function() {
+          // Make an AJAX request to search by ID after the delay
+          $.get("http://localhost:1999/kpl/registration/api/search2024", { id: searchInput }, function(response) {
+            // Display the search result
+            if (response) {
+              var resultHtml = "<img src='data:image/png;base64," + response.image + "' class='image' />";
+              resultHtml += "<p>Reg ID: " + response.registrationId + "</p>";
+              resultHtml += "<p>Name: " + response.playerFirstName + " " + response.playerLastName + "</p>";
+              resultHtml += "<p>DOB: " + response.dob + "</p>";
+              resultHtml += "<p>Location Category: " + response.location + "</p>";
+              resultHtml += "<p>Player Category: " + response.generue + "</p>";
+              resultHtml += "<p>Address: " + response.playerAddress + "</p>";
+              resultContainer.html(resultHtml);
+            } else {
+              resultContainer.html("No data found.");
+            }
+          });
+        }, 1000); // 1000 milliseconds (1 second) delay
+      });
+
+      // Handle form submission with AJAX
+      $("#updateForm").on("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = $(this).serialize(); // Serialize form data
+
+        $.post("http://localhost:1999/kpl/registration/api/soldAmountandTeam", formData, function(response) {
+          console.log(response)
+          // Handle the response
+          if (response==='success') {
+            alert('Player information updated successfully!');
+            // Clear the form data
+            $("#updateForm")[0].reset();
+          } else {
+            alert('Error updating player information.');
+          }
+        }).fail(function() {
+          alert('Error in form submission.');
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="flex-container">
+    <div style="padding: 0% 5% 0% 8%;">
+      <form id="updateForm">
+        <h3><u>Update Player Information</u></h3>
+        <label for="id">Reg ID:</label>
+        <input type="number" id="id" name="id" placeholder="Enter Registration ID" required><br><br>
+        <label for="soldAmount">Sold Amount:</label>
+        <input type="number" id="soldAmount" name="soldAmount" placeholder="Enter sold amount" required><br><br>
+        <label for="team">Sold to team:
+          <select name="team" style="width: 242px; height: 38px; border-radius: 25px; text-align: center;" required>
+            <option hidden>Team List</option>
+            <option value="Vikings">Vikings</option>
+            <option value="Eleven Spartan">Eleven Spartan</option>
+            <option value="ABBYS">ABBYS</option>
+            <option value="BBS">BBS</option>
+            <option value="Long Live Mad Max">Long Live Mad Max</option>
+            <option value="Joy Pagol">Joy Pagol</option>
+            <option value="RSS">RSS</option>
+            <option value="United Ancholik Dol">United Ancholik Dol</option>
+            <option value="Titan Super Kings">Titan Super Kings</option>
+            <option value="Kashipur Hori Mondir">Kashipur Hori Mondir</option>
+          </select>
+        </label>
+        <br>
+        <div style="padding-left: 40%;">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="padding: 0% 5% 0% 8%;">
+      <label for="searchInput">
+        <h3><u>Search Player By Registration ID</u></h3>
+        <input type="number" id="searchInput" placeholder="Enter Registration ID">
+      </label>
+      <div class="result" id="resultContainer"></div>
+    </div>
+  </div>
+</body>
+
+</html>
