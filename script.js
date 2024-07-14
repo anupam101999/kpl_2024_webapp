@@ -63,7 +63,7 @@ function redirectToURL(url) {
 
 
 function calculateReverseDate() {
-    const refDate = '2024-07-22'; // Change this to your desired date in yyyy-mm-dd format
+    const refDate = '2024-07-15'; // Change this to your desired date in yyyy-mm-dd format
     const targetDate = new Date(refDate);
     const currentDate = new Date();
 
@@ -87,7 +87,7 @@ function calculateReverseDate() {
     console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until ${refDate}`);
 
     const countdownElement = document.getElementById('countdown');
-    if (!modifiedTimeDifference > 0) {
+    if (modifiedTimeDifference > 0) {
         countdownElement.textContent =
             `The registration form for KPL 2024 will be available in ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
