@@ -76,7 +76,7 @@ function calculateReverseDate() {
     // Convert the modified time difference back to a Date object
     const modifiedDate = new Date(currentDate.getTime() + modifiedTimeDifference);
 
-    console.log('Modified Date:', modifiedDate);
+   // console.log('Modified Date:', modifiedDate);
 
     // Calculate days, hours, minutes, and seconds
     const days = Math.floor(modifiedTimeDifference / (1000 * 60 * 60 * 24));
@@ -84,7 +84,7 @@ function calculateReverseDate() {
     const minutes = Math.floor((modifiedTimeDifference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((modifiedTimeDifference % (1000 * 60)) / 1000);
 
-    console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until ${refDate}`);
+   // console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until ${refDate}`);
 
     const countdownElement = document.getElementById('countdown');
     if (modifiedTimeDifference > 0) {
