@@ -89,7 +89,7 @@ function calculateReverseDate() {
     const countdownElement = document.getElementById('countdown');
     if (modifiedTimeDifference > 0) {
         countdownElement.textContent =
-            `Hurry Up guys!,Registration will end in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+            `Hurry Up guys! Registration will end in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
         countdownElement.textContent = "Wait for further updates :)";
