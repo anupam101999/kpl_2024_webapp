@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color:#4c9e9e;
+    background-color:#cc3d95;
     color: #fff;
   }
   
@@ -153,7 +153,7 @@ input[type=checkbox] {
   
   /* Footer styles */
 footer {
-    background-color: teal;
+    background-color: #cc3d95;
     padding: 20px;
     text-align: center;
     color: #fff;
@@ -303,4 +303,10 @@ footer {
 
 #countdown {
   color: red; /* Change this color to the color you want for the countdown timer */
+}
+.disabled-link {
+  color: grey; /* Grey color for the text */
+  pointer-events: none; /* Prevents clicking on the link */
+  text-decoration: none; /* Removes underline */
+  cursor: default; /* Shows default cursor */
 }

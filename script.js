@@ -63,7 +63,7 @@ function redirectToURL(url) {
 
 
 function calculateReverseDate() {
-    const refDate = '2023-08-27'; // Change this to your desired date in yyyy-mm-dd format
+    const refDate = '2024-07-22'; // Change this to your desired date in yyyy-mm-dd format
     const targetDate = new Date(refDate);
     const currentDate = new Date();
 
@@ -87,12 +87,12 @@ function calculateReverseDate() {
     console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until ${refDate}`);
 
     const countdownElement = document.getElementById('countdown');
-    if (modifiedTimeDifference > 0) {
+    if (!modifiedTimeDifference > 0) {
         countdownElement.textContent =
-            `Grand Auction in  ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+            `The registration form for KPL 2024 will be available in ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
     else {
-        countdownElement.textContent = "Registration form for Kpl 2024 will be available soon :) ";
+        countdownElement.textContent = "The registration form for KPL 2024 is coming soon. We appreciate your patience! :) ";
     }
 }
 

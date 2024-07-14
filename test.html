@@ -1,11 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Test Docpage</p>
-</body>
-</html>
+;;
+;; Domain:     kpl2024.online.
+;; Exported:   2024-07-14 05:47:35
+;;
+;; This file is intended for use for informational and archival
+;; purposes ONLY and MUST be edited before use on a production
+;; DNS server.  In particular, you must:
+;;   -- update the SOA record with the correct authoritative name server
+;;   -- update the SOA record with the contact e-mail address information
+;;   -- update the NS record(s) with the authoritative name servers for this domain.
+;;
+;; For further information, please consult the BIND documentation
+;; located on the following website:
+;;
+;; http://www.isc.org/
+;;
+;; And RFC 1035:
+;;
+;; http://www.ietf.org/rfc/rfc1035.txt
+;;
+;; Please note that we do NOT offer technical support for any use
+;; of this zone data, the BIND name server, or any other third-party
+;; DNS software.
+;;
+;; Use at your own risk.
+;; SOA Record
+kpl2024.online	3600	IN	SOA	major.ns.cloudflare.com. dns.cloudflare.com. 2047260265 10000 2400 604800 3600
+
+;; NS Records
+kpl2024.online.	86400	IN	NS	major.ns.cloudflare.com.
+kpl2024.online.	86400	IN	NS	ruth.ns.cloudflare.com.
+
+;; CAA Records
+kpl2024.online.	1	IN	CAA	0 issuewild "globalsign.com"
+kpl2024.online.	1	IN	CAA	0 issue "letsencrypt.org"
+kpl2024.online.	1	IN	CAA	0 issuewild "comodoca.com"
+kpl2024.online.	1	IN	CAA	0 issue "globalsign.com"
+kpl2024.online.	1	IN	CAA	0 issuewild "letsencrypt.org"
+kpl2024.online.	1	IN	CAA	0 issue "digicert.com"
+kpl2024.online.	1	IN	CAA	0 issue "comodoca.com"
+kpl2024.online.	1	IN	CAA	0 issuewild "digicert.com"
+
+;; CNAME Records
+github.kpl2024.online.	1	IN	CNAME	anupam101999.github.io.
+kpl2023.online.kpl2024.online.	1	IN	CNAME	kpl2024.online.
+kpl2024.online.	1	IN	CNAME	anupam101999.github.io.
+www.kpl2024.online.	1	IN	CNAME	kpl2024.online.
