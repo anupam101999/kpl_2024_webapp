@@ -87,12 +87,13 @@ function calculateReverseDate() {
    // console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds left until ${refDate}`);
 
     const countdownElement = document.getElementById('countdown');
-    if (!modifiedTimeDifference > 0) {
-        countdownElement.textContent =
-            `Hurry Up guys! Registration will end in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    console.log(days)
+    if (modifiedTimeDifference > 0) {
+        countdownElement.textContent ='KPL 2024 মরশুমের জন্য কমিটির পক্ষ থেকে জানানো যাচ্ছে যে এ বছর নতুন টিমের (franchise) স্লট available রয়েছে। ইচ্ছুক ব্যক্তি ব্যক্তিবর্গ KPL কমিটির সঙ্গে যোগাযগ করুন Ph - 62964 71117(রনি), 87773 06063(অজয়)';
+            
     }
     else {
-        countdownElement.textContent = 'KPL 2024 মরশুমের জন্য কমিটির পক্ষ থেকে জানানো যাচ্ছে যে এ বছর নতুন টিমের (franchise) স্লট available রয়েছে। ইচ্ছুক ব্যক্তি ব্যক্তিবর্গ KPL কমিটির সঙ্গে যোগাযগ করুন Ph - 62964 71117(রনি), 87773 06063(অজয়)';
+        countdownElement.textContent = `Hurry Up guys! Registration will end in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
     }
 }
 
