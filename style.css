@@ -302,7 +302,7 @@ footer {
 }
 
 #countdown {
-  color: red; /* Change this color to the color you want for the countdown timer */
+  color: orangered; /* Change this color to the color you want for the countdown timer */
 }
 .disabled-link {
   color: grey; /* Grey color for the text */
