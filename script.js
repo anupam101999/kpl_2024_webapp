@@ -88,7 +88,7 @@ function calculateReverseDate() {
 
     const countdownElement = document.getElementById('countdown');
     console.log(days)
-    if (modifiedTimeDifference > 0) {
+    if (!modifiedTimeDifference > 0) {
         countdownElement.textContent ='KPL 2024 মরশুমের জন্য কমিটির পক্ষ থেকে জানানো যাচ্ছে যে এ বছর নতুন টিমের (franchise) স্লট available রয়েছে। ইচ্ছুক ব্যক্তি ব্যক্তিবর্গ KPL কমিটির সঙ্গে যোগাযগ করুন Ph - 62964 71117(রনি), 87773 06063(অজয়)';
             
     }
