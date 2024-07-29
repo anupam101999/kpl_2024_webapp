@@ -310,3 +310,23 @@ footer {
   text-decoration: none; /* Removes underline */
   cursor: default; /* Shows default cursor */
 }
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
