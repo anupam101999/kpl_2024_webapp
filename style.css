@@ -313,7 +313,7 @@ footer {
 
 .video-container {
   position: relative;
-  width: 100%;
+  width: auto;
   height: 50vh; /* Full viewport height */
   overflow: hidden;
   display: flex;
