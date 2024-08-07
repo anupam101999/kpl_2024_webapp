@@ -63,7 +63,7 @@ function redirectToURL(url) {
 
 
 function calculateReverseDate() {
-    const refDate = '2024-08-08'; // Change this to your desired date in yyyy-mm-dd format
+    const refDate = '2024-08-09'; // Change this to your desired date in yyyy-mm-dd format
     const targetDate = new Date(refDate);
     const currentDate = new Date();
 
