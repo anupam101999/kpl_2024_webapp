@@ -93,7 +93,7 @@ function calculateReverseDate() {
             
     }
     else {
-        countdownElement.textContent = `Hurry Up guys! Registration will end in ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+        countdownElement.textContent = `Player PDF is available right now!`;
     }
 }
 
