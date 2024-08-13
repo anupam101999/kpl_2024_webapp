@@ -181,7 +181,7 @@ liveTeamData
 
             <script>
                 function fetchSoldPlayerData() {
-                    fetch('http://192.168.0.113:1999/kpl/registration/api/soldPlayerList')
+                    fetch('http://localhost:1999/kpl/registration/api/soldPlayerList')
                         .then(response => response.json())
                         .then(data => {
                             // Process the received data and update the UI
@@ -224,7 +224,7 @@ liveTeamData
 
                 function fetchData() {
                     // Retrieve JSON data from the API
-                    fetch('http://192.168.0.113:1999/kpl/registration/api/liveTeamData')
+                    fetch('http://localhost:1999/kpl/registration/api/liveTeamData')
                         .then(response => response.json())
                         .then(data => {
                             // Create the table dynamically
