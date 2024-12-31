@@ -23,7 +23,7 @@
     body {
       font-family: Arial;
       margin: 0;
-      background-color: #ffA500;
+      background-color: #f0ece4;
     }
     .header {
       padding: 0.005%;
@@ -102,7 +102,7 @@
               var resultHtml = "<img src='data:image/png;base64," + response.image + "' class='image' />";
               resultHtml += "<p>Reg ID: " + response.registrationId + "</p>";
               resultHtml += "<p>Name: " + response.playerFirstName + " " + response.playerLastName + "</p>";
-              resultHtml += "<p>DOB: " + response.dob + "</p>";
+            //  resultHtml += "<p>DOB: " + response.dob + "</p>";
               resultHtml += "<p>Location Category: " + response.location + "</p>";
               resultHtml += "<p>Player Category: " + response.category + "</p>";
               resultHtml += "<p>Address: " + response.playerAddress + "</p>";
@@ -129,7 +129,7 @@
             $("#updateForm")[0].reset();
           } else {
             alert('Error updating player information.');
-          }
+         }
         }).fail(function() {
           alert('Error in form submission.');
         });
@@ -159,7 +159,7 @@
             <option value="RSS">RSS</option>
             <option value="SS 11">SS 11</option>
             <option value="TSK">Titan Super Kings</option>
-            <option value="RC">ROYAL CHALLENGERS</option>
+            <option value="RC">RISING CHAMPION</option>
           </select>
         </label>
         <br>
